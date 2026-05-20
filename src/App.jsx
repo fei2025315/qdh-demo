@@ -129,29 +129,38 @@ export default function App() {
       `}</style>
 
       <div className="hd">
-        <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
+        <div style={{ marginTop: 12, display: "flex", gap: 6, alignItems: "center" }}>
+  <span style={{
+    font: "400 12px 'Noto Serif SC', serif",
+    color: "#9e9182",
+    marginRight: 2
+  }}>声音</span>
   <button
     onClick={() => setPersona("shiguan")}
     style={{
-      font: persona === "shiguan" ? "600 13px 'Noto Serif SC', serif" : "400 13px 'Noto Serif SC', serif",
-      color: persona === "shiguan" ? "#2e5a5e" : "#9e9182",
-      background: "transparent",
-      border: persona === "shiguan" ? "1px solid #2e5a5e" : "1px solid #d6cfbf",
-      borderRadius: 3,
-      padding: "4px 12px",
-      cursor: "pointer"
+      font: "400 13px 'Noto Serif SC', serif",
+      color: persona === "shiguan" ? "#f5f0e8" : "#9e9182",
+      background: persona === "shiguan" ? "#2e5a5e" : "transparent",
+      border: "1px solid " + (persona === "shiguan" ? "#2e5a5e" : "#d6cfbf"),
+      borderRadius: 2,
+      padding: "3px 10px",
+      cursor: "pointer",
+      transition: "all 0.2s ease",
+      letterSpacing: "0.05em"
     }}
   >史官</button>
   <button
     onClick={() => setPersona("local")}
     style={{
-      font: persona === "local" ? "600 13px 'Noto Serif SC', serif" : "400 13px 'Noto Serif SC', serif",
-      color: persona === "local" ? "#2e5a5e" : "#9e9182",
-      background: "transparent",
-      border: persona === "local" ? "1px solid #2e5a5e" : "1px solid #d6cfbf",
-      borderRadius: 3,
-      padding: "4px 12px",
-      cursor: "pointer"
+      font: "400 13px 'Noto Serif SC', serif",
+      color: persona === "local" ? "#f5f0e8" : "#9e9182",
+      background: persona === "local" ? "#2e5a5e" : "transparent",
+      border: "1px solid " + (persona === "local" ? "#2e5a5e" : "#d6cfbf"),
+      borderRadius: 2,
+      padding: "3px 10px",
+      cursor: "pointer",
+      transition: "all 0.2s ease",
+      letterSpacing: "0.05em"
     }}
   >当地人</button>
 </div>
