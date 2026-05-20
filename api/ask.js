@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         "X-Title": "qdh-demo"
       },
       body: JSON.stringify({
-        model: "anthropic/claude-3-haiku",
+        model: "deepseek/deepseek-chat",
         max_tokens: 1024,
         stream: true,
         messages: [
