@@ -40,6 +40,7 @@ export default function App() {
   const [msgs, setMsgs] = useState([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
+  const [persona, setPersona] = useState("shiguan");
   const endRef = useRef(null);
   const inRef = useRef(null);
 
@@ -69,7 +70,7 @@ export default function App() {
       const response = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query, context: ctx }),
+        body: JSON.stringify({ query, context: ctx, persona: persona }),
       });
       if (!response.ok) throw new Error("API error");
       const reader = response.body.getReader();
@@ -128,6 +129,32 @@ export default function App() {
       `}</style>
 
       <div className="hd">
+        <div style={{ marginTop: 12, display: "flex", gap: 8 }}>
+  <button
+    onClick={() => setPersona("shiguan")}
+    style={{
+      font: persona === "shiguan" ? "600 13px 'Noto Serif SC', serif" : "400 13px 'Noto Serif SC', serif",
+      color: persona === "shiguan" ? "#2e5a5e" : "#9e9182",
+      background: "transparent",
+      border: persona === "shiguan" ? "1px solid #2e5a5e" : "1px solid #d6cfbf",
+      borderRadius: 3,
+      padding: "4px 12px",
+      cursor: "pointer"
+    }}
+  >史官</button>
+  <button
+    onClick={() => setPersona("local")}
+    style={{
+      font: persona === "local" ? "600 13px 'Noto Serif SC', serif" : "400 13px 'Noto Serif SC', serif",
+      color: persona === "local" ? "#2e5a5e" : "#9e9182",
+      background: "transparent",
+      border: persona === "local" ? "1px solid #2e5a5e" : "1px solid #d6cfbf",
+      borderRadius: 3,
+      padding: "4px 12px",
+      cursor: "pointer"
+    }}
+  >当地人</button>
+</div>
         <div className="hd-r">
           <h1>淳安方志</h1>
           <span className="tg">Demo</span>
