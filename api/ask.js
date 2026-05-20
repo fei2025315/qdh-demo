@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer sk-or-v1-4e8...92e",
+        "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,,
         "HTTP-Referer": "https://qdh-demo.vercel.app",
         "X-Title": "qdh-demo"
       },
